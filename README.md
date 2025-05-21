@@ -1,30 +1,22 @@
-# Next.js project requirements
+# Taswir
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Taswir is a generative front-end for Model-Controlled Process (MCP) systems. It connects to an MCP endpoint, fetches available tools, and dynamically renders user interfaces based on tool schemas. Executions run inside real browser sessions powered by Browserbase.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/syed-hannan-shahs-projects/v0-next-js-project-requirements)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/AyX2XFoqYtR)
+Built with Next.js 14, Tailwind CSS, shadcn/ui, and the Browserbase SDK.
 
-## Overview
+## What It Does
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+- Connects to an MCP URL with auth
+- Fetches tool definitions (name, schema, return type, endpoint)
+- Generates input forms from JSON schema
+- Executes tools inside Browserbase browser sessions
+- Renders output as markdown, list, or plain text
+- Streams real-time session logs
 
-## Deployment
+## Tech Stack
 
-Your project is live at:
+- Next.js 14 (App Router)
+- Tailwind CSS + shadcn/ui
+- React JSON Schema Form
+- Browserbase SDK
 
-**[https://vercel.com/syed-hannan-shahs-projects/v0-next-js-project-requirements](https://vercel.com/syed-hannan-shahs-projects/v0-next-js-project-requirements)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/AyX2XFoqYtR](https://v0.dev/chat/projects/AyX2XFoqYtR)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
