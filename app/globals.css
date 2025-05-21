@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-radial from-brand-50 via-white to-brand-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-800;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/50 dark:bg-gray-900/50 backdrop-blur-md border border-white/20 dark:border-gray-800/30 shadow-xl;
+  }
+
+  .glass-navbar {
+    @apply bg-white/60 dark:bg-gray-900/60 backdrop-blur-md shadow-sm border-b border-white/20 dark:border-gray-800/30;
+  }
+
+  .glass-sidebar {
+    @apply bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm border-r border-white/20 dark:border-gray-800/30;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-accent;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .brand-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #254edb, #ff7cf0);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:-z-10 before:p-[1px] before:rounded-[inherit] before:bg-gradient-to-r before:from-brand-400 before:to-accent;
+  }
+}
+
+/* Use standard CSS for the gradient button to avoid syntax issues */
+.gradient-button {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #3366ff var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(51 102 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #ff7cf0 var(--tw-gradient-to-position);
+  background-size: 200% 200%;
+  background-position: left;
+  transition: background-position 0.5s ease;
+}
+
+.gradient-button:hover {
+  background-position: right;
+}
+
+/* Use standard CSS for hover-lift to avoid syntax issues */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Use standard CSS for active-scale to avoid syntax issues */
+.active-scale {
+  transition: transform 0.2s ease;
+}
+
+.active-scale:active {
+  transform: scale(0.95);
+}
